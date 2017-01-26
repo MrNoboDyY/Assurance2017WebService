@@ -10,6 +10,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -86,6 +87,24 @@ public class ClientFacadeREST extends AbstractFacade<Client> {
     @Override
     protected EntityManager getEntityManager() {
         return em;
+    }
+    
+    @GET
+    @Path("nom/{nom}")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public List<Client> trouverNom (@PathParam("nom")String nom ){
+        Query q = em.createQuery("SELECT c FROM Client c WHERE c.nom = " + nom);
+        List<Client> clients = q.getResultList();
+       return clients;
+    }
+    
+    @GET
+    @Path("telephone/{nom}")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public List<Client> trouverTelephone (@PathParam("nom")String nom ){
+        Query q = em.createQuery("SELECT c FROM Client c WHERE c.telephone = " + nom);
+        List<Client> clients = q.getResultList();
+       return clients;
     }
     
 }
