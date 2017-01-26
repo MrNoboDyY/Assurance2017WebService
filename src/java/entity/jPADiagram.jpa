@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="entity" v="2.6.5" sm="false" xs="false" id="_1485263971888122" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" compositePrimaryKeyClass="ClientPK" abs="false" class="Client" visibile="true" minimized="false" rootElement="_1485263971888122" id="_1485263984375">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" visibile="true" name="nom" id="_1485264024406129">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" visibile="true" name="prenom" id="_1485264026261130">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" visibile="true" name="adresse" id="_1485264028326131">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" visibile="true" name="telephone" id="_1485264030230132">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1485263984375123">
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Client.findAll">
+            <jpa:query>Select e from Client e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Client.findByNom">
+            <jpa:query>Select e from Client e where e.nom=:nom</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Client.findByPrenom">
+            <jpa:query>Select e from Client e where e.prenom=:prenom</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Client.findByAdresse">
+            <jpa:query>Select e from Client e where e.adresse=:adresse</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Client.findByTelephone">
+            <jpa:query>Select e from Client e where e.telephone=:telephone</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="DevisPK" abs="false" class="Devis" visibile="true" minimized="false" rootElement="_1485263971888122" id="_1485263986015">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" visibile="true" name="date" id="_1485264070190133"/>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1485263984375" visibile="true" name="client" id="_1485264164196140"/>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1485263988866" visibile="true" name="recap" id="_1485264173932141"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1485263986015125">
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Devis.findAll">
+            <jpa:query>Select e from Devis e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Devis.findByDate">
+            <jpa:query>Select d from Devis d where d.date=:date</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="RecapPK" abs="false" class="Recap" visibile="true" minimized="false" rootElement="_1485263971888122" id="_1485263988866">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" visibile="true" name="formule" id="_1485264083998134">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" visibile="true" name="kilometrage" id="_1485264085681135">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" visibile="true" name="marque" id="_1485264088759136">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" visibile="true" name="modele" id="_1485264090883137">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" visibile="true" name="montant" id="_1485264093108138">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" visibile="true" name="utilisationVehicule" id="_1485264098368139"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1485263988866127">
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Recap.findAll">
+            <jpa:query>Select e from Recap e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Recap.findByFormule">
+            <jpa:query>Select r from Recap r where r.formule=:formule</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Recap.findByKilometrage">
+            <jpa:query>Select r from Recap r where r.kilometrage=:kilometrage</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Recap.findByMarque">
+            <jpa:query>Select r from Recap r where r.marque=:marque</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Recap.findByModele">
+            <jpa:query>Select r from Recap r where r.modele=:modele</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Recap.findByMontant">
+            <jpa:query>Select r from Recap r where r.montant=:montant</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Recap.findByUtilisationVehicule">
+            <jpa:query>Select r from Recap r where r.utilisationVehicule=:utilisationVehicule</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:snp e="true" loc="BEFORE_PACKAGE">/**
+ * This file was generated by the JPA Modeler
+ */</jpa:snp>
+    <jpa:inf e="true" n="java.io.Serializable"/>
+    <jpa:diagram>
+        <plane elementRef="_1485263971888122">
+            <shape elementRef="_1485263984375">
+                <Bounds x="173.0" y="119.0" width="128.0" height="155.0"/>
+            </shape>
+            <shape elementRef="_1485263986015">
+                <Bounds x="475.0" y="304.0" width="128.0" height="147.0"/>
+            </shape>
+            <shape elementRef="_1485263988866">
+                <Bounds x="789.0" y="153.0" width="150.0" height="197.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>
